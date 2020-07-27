@@ -1,35 +1,40 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
+const votingAge = 18;
 
-
-
+if (votingAge > votingAge) {
+    console.log("True");
+}
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
-
-
-
+let var1 = 1;
+let var2 = 2;
+if(var2 = 2){
+    var1++;
+}
+console.log("Variable 1: "+var1);
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
-
-
-
+Number("1999");
 
 //Task d: Write a function to multiply a*b 
 
-
-
-
+multiply = function(a,b) {
+    return a * b;
+}
+console.log("5 x 10 = " + multiply(5,10));
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
-
-
-
+dog_years = function(age) {
+ return age * 7;
+};
+console.log("My age in dog years: "+dog_years(18));
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
@@ -49,8 +54,32 @@
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
-
-
+function dog_feeder(weight,age){
+    if (age >= 1) {
+        if (weight <= 5) {
+            return weight * 0.05;
+        }
+        elif (weight >= 6 && weight <= 10) {
+            return weight * 0.04;
+        }
+        elif (weight >= 11 && weight <= 15) {
+            return weight * 0.03;
+        }
+        elif (weight > 15); {
+            return weight * 0.02;
+        }
+    }
+    if (age > 0.16 && age < 0.33) {
+        return weight * 0.1;
+    }
+    if (age >= 0.33 && age < 0.58) {
+        return weight * 0.05;
+    }
+    if (age >= 0.58 && age < 1) {
+        return weight * 0.04;
+    }
+}
+console.log(dog_feeder(15,1));
 
 
 /************************************************************** Task 4 **************************************************************/
@@ -60,7 +89,35 @@
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
+function rockPaperSissors(choice){
+    const computerChoice = Math.floor((Math.random() * 3) + 1);
+    if(computerChoice === 0){
+        if (choice = 'paper'){
+            return 'you win';
+        }
+        else {
+            return 'you loose'
+        }
+    }
+    if(computerChoice === 1){
+        if (choice = 'sissors'){
+            return 'you win';
+        }
+        else {
+            return 'you loose'
+        }
+    }
+    if(computerChoice === 2){
+        if (choice = 'rock'){
+            return 'you win';
+        }
+        else {
+            return 'you loose'
+        }
+    }
+}
+
+console.log("RPS: " + rockPaperSissors('rock'));
   
 
 /************************************************************** Task 5 **************************************************************/
