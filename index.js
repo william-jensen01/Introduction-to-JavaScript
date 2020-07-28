@@ -59,13 +59,13 @@ function dog_feeder(weight,age){
         if (weight <= 5) {
             return weight * 0.05;
         }
-        elif (weight >= 6 && weight <= 10) {
+        else if  (weight >= 6 && weight <= 10) {
             return weight * 0.04;
         }
-        elif (weight >= 11 && weight <= 15) {
+        else if (weight >= 11 && weight <= 15) {
             return weight * 0.03;
         }
-        elif (weight > 15); {
+        else if (weight > 15); {
             return weight * 0.02;
         }
     }
@@ -99,7 +99,7 @@ function rockPaperSissors(choice){
             return 'you loose'
         }
     }
-    if(computerChoice === 1){
+    else if(computerChoice === 1){
         if (choice = 'sissors'){
             return 'you win';
         }
@@ -107,7 +107,7 @@ function rockPaperSissors(choice){
             return 'you loose'
         }
     }
-    if(computerChoice === 2){
+    else if(computerChoice === 2){
         if (choice = 'rock'){
             return 'you win';
         }
@@ -117,21 +117,26 @@ function rockPaperSissors(choice){
     }
 }
 
-console.log("RPS: " + rockPaperSissors('rock'));
+console.log("Rock, paper, scissors -- " + rockPaperSissors('rock'));
   
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
-
+function km_to_mi(km) {
+    return km * 0.621371
+}
+console.log("1 km is "+km_to_mi(1),"miles");
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
-
-
+function ft_to_cm(ft) {
+    return ft * 30.48;
+}
+console.log("1 ft is "+ft_to_cm(1),"cm");
 
 
 /************************************************************** Task 6 **************************************************************/
@@ -139,8 +144,15 @@ console.log("RPS: " + rockPaperSissors('rock'));
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-
-
+function annoying_song(starting_number) {
+    for (var i = 0; starting_number > 0; starting_number--) {
+        console.log(starting_number, " bottles of soda on the wall");
+        console.log(starting_number, " bottles of soda. Take one down pass it around");
+        console.log(starting_number -1, " bottles of soda on the wall");
+    }
+}
+const num = 99;
+annoying_song(num);
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -152,24 +164,77 @@ console.log("RPS: " + rockPaperSissors('rock'));
 //60s should be D 
 //and anything below 60 should be F
   
-
-  
-  
+function grade_calculator(mark) {
+    if(mark >= 90) {
+        console.log("You got an A!");
+    }else if(mark <= 89 && mark >= 80){
+        console.log("You got a B");
+    }else if(mark <= 79 && mark >= 70){
+        console.log("You got a C");
+    }else if(mark <= 69 && mark >= 60){
+        console.log("You got a D");
+    }else{
+        console.log("You got an F ;(");
+    }
+}
+  console.log(grade_calculator(69));
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
-
-
-
+const vowel_list = ['a','e','i','o','u'];
+let count = 0
+function vowel_counter(word){
+    for (let letter of word.toLowerCase()){
+        if(vowel_list.includes(letter)){
+            count +=1
+        }
+    }
+}
+console.log(vowel_counter("antidisestablishmentarianism"))
 
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
+user = promt("Rock, Paper, or Scissors?").toLowerCase();
+options = ['Rock','Paper','Scissors'];
 
-
-
-
+function rock_paper_scissors(user) {
+    comp = Math.random(options)
+    if (user === 'Rock'.toLowerCase()) {
+        if (comp === 'Paper') {
+            console.log("Wow you suck!");
+        } 
+        else if (comp === 'Rock'){
+            console.log("Tie");
+        } 
+        else {
+            console.log("Winner winner chicken dinner!")
+        }
+    } 
+    else if (user==='Paper'.toLowerCase()){
+        if (comp === 'Scissors') {
+            console.log("Wow you suck!");
+        } 
+        else if (comp === 'Paper') {
+            console.log("Tie");
+        }
+        else {
+            console.log("Winner winner chicken dinner!")
+        }
+    }
+    else if (user === 'Scissors'.toLowerCase()) {
+        if (comp === 'Rock') {
+            console.log("Wow you suck!");
+        }
+        else if (comp === 'Scissors') {
+            console.log("Tie");
+        }
+        else {
+            console.log("Winner winner chicken dinner!")
+        }
+    }
+}
