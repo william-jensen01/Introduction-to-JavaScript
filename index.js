@@ -199,7 +199,7 @@ console.log(vowel_counter("antidisestablishmentarianism"))
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
-user = promt("Rock, Paper, or Scissors?").toLowerCase();
+user = prompt("Rock, Paper, or Scissors?").toLowerCase();
 options = ['Rock','Paper','Scissors'];
 
 function rock_paper_scissors(user) {
